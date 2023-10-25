@@ -48,7 +48,7 @@ class PhishingDetectorGUI:
         checker.whois_data(self.user_input, self)
         checker.check_requests(self.user_input, self)
         checker.get_date_before_expired(self.user_input.split("//")[-1].split("/")[0], self)
-        checker.sus(self.user_input,self)
+        checker.sus(self.user_input, self)
 
     def run(self):
         self.root.mainloop()

@@ -137,12 +137,12 @@ class Checker:
 
     def sus(self, url, gui_instance):
         suspicious_chars = ['<', '>', '"', "'", '(', ')', '{', '}', '[', ']', '@', '!', '#', '$', '%', '^', '&', '*',
-                            '`', '|', '\\', '/', ' ', 'xn--']
+                            '`', '|', '\\', ' ']
 
         for char in suspicious_chars:
             if char in url:
-                gui_instance.redirects.config(text="Suspicious Characters in the Url", fg='red',
+                gui_instance.sus.config(text="Suspicious Characters in the Url", fg='red',
                                               font=("Arial", 10, "bold"), bg='black')
                 return
-        gui_instance.redirects.config(text="No suspicious characters detected", fg='light',
+        gui_instance.sus.config(text="No suspicious characters detected", fg='lightgreen',
                                       font=("Arial", 10, "bold"), bg='black')
